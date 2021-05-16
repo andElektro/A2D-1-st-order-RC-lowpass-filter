@@ -27,7 +27,7 @@ class LPfilter
   public:
     LPfilter(V& _fcut, V& _fsam);
     ~LPfilter();
-    V get(V _Xin);
+    V get(V _xin);
 };
 
 template<typename V>
@@ -49,9 +49,10 @@ LPfilter<V>::~LPfilter()
 }
 
 template<typename V>
-V LPfilter<V>::get(V _yin)
+V LPfilter<V>::get(V _xin)
 {
   //y[n] = Wg/(1+Wg)*x[n] + Wg/(1+Wg)*x[n-1] - (Wg-1)/(1+Wg)*y[n-1]
+  x->push(_xin);
   y->push(xp*x->get(0)+xp*x->get(1)-yp*y->get(1));
   return y->get(0);
 }
