@@ -1,4 +1,4 @@
-# A2D-1-st-order-RC-lowpass-filter for Arduino
+# A2D-1-st-order-lowpass-filter for Arduino
 Analog to digital 1:st order RC lowpass filter template.
 Choose cut off frequency and samplingtime.
 
