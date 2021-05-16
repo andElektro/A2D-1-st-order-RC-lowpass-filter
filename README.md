@@ -13,3 +13,13 @@ float T = 0.001;
 LPfilter<float> LPf(fcut, T);
 
 float Vout = 0;
+
+void setup() {
+
+  float Vin = 2.34;
+  
+  Vout = LPf.get(Vin);
+
+}
+
+void loop() {}
